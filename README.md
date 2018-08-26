@@ -1,1 +1,3 @@
 # frimania
+## setup
+./setup.sh
