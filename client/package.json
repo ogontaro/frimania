@@ -1,8 +1,8 @@
 {
   "name": "frimania-client",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "ogontaro <ogontaro@gmail.com>",
+  "description": "My dandy Nuxt.js project",
+  "author": "ogontaro",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -13,16 +13,16 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
     "@nuxtjs/bulma": "^1.2.0",
-    "nuxt": "^1.0.0"
+    "@nuxtjs/axios": "^5.0.0"
   },
   "devDependencies": {
+    "nodemon": "^1.11.0",
     "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
-    "pug": "^2.0.3",
-    "pug-plain-loader": "^1.0.0"
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0"
   }
 }
