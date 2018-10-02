@@ -6,7 +6,7 @@
         frimania-client
       </h1>
       <h2 class="subtitle">
-        My dandy Nuxt.js project
+        My awe-inspiring Nuxt.js project
       </h2>
       <div class="links">
         <a
