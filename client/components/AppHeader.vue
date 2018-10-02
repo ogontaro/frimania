@@ -1,4 +1,4 @@
 <template lang="pug">
   header
-    header
+    | へっだー
 </template>

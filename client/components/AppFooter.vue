@@ -1,4 +1,4 @@
 <template lang="pug">
   footer
-    footer
+    | ふったー
 </template>
