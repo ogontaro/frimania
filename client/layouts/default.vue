@@ -1,6 +1,12 @@
 <template>
   <div>
+    <header>
+      ヘッダー
+    </header>
     <nuxt/>
+    <footer>
+      フッター
+    </footer>
   </div>
 </template>
 
