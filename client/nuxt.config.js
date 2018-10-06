@@ -67,7 +67,12 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [],
+  css: [
+    '@fortawesome/fontawesome-free-webfonts',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-brands.css',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-regular.css',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-solid.css'
+  ],
 
   /*
   ** Plugins to load before mounting the App
