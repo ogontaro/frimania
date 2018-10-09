@@ -1,7 +1,8 @@
 <template lang="pug">
   div
     app-header
-    nuxt
+    .has-background-light
+      nuxt
     app-footer
 </template>
 
