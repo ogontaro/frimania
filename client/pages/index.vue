@@ -19,6 +19,9 @@
       items() {
         return this.$store.state.items
       }
+    },
+    created() {
+      this.$store.commit('get')
     }
   }
 </script>
