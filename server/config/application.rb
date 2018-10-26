@@ -17,21 +17,20 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-
-config.time_zone = 'Tokyo'
-
-config.generators do |g|
-  g.test_framework :rspec,
-                   view_specs: false,
-                   helper_specs: false,
-                   controller_specs: false
-  g.fixture_replacement :factory_bot, dir: 'spec/factories'
-end
-
 module FrimaniaServer
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+
+    config.time_zone = 'Tokyo'
+
+    config.generators do |g|
+      g.test_framework :rspec,
+                       view_specs: false,
+                       helper_specs: false,
+                       controller_specs: false
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
+    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
