@@ -11,11 +11,22 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
-require "rails/test_unit/railtie"
+# require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+
+config.time_zone = 'Tokyo'
+
+config.generators do |g|
+  g.test_framework :rspec,
+                   view_specs: false,
+                   helper_specs: false,
+                   controller_specs: false
+  g.fixture_replacement :factory_bot, dir: 'spec/factories'
+end
 
 module FrimaniaServer
   class Application < Rails::Application

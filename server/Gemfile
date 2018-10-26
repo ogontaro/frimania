@@ -14,12 +14,20 @@ gem 'rails', '~> 5.2.1'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+group :test do
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'shoulda-matchers'
+end
+
 group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
   gem 'hirb'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
+  gem 'rspec-rails'
 end
 
 group :development do
