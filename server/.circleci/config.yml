@@ -20,14 +20,5 @@ jobs:
           paths:
             - .bundle
 
-      - restore_cache:
-          key: cache-yarn-{{ checksum "yarn.lock" }}
-      - run: bin/yarn install
-      - save_cache:
-          key: cache-yarn-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
-
-      - run: yarn run lint
       - run: bundle exec rubocop
       - run: bundle exec rspec
