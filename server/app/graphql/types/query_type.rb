@@ -2,8 +2,12 @@
 
 Types::QueryType = GraphQL::ObjectType.define do
   name 'Query'
-  # First describe the field signature:
-  field :item, ItemType, null: true do
-    argument :id, ID, required: true
+
+  field :item, !Types::ItemType do
+    description 'item'
+
+    resolve ->(_obj, _args, ctx) {
+      ctx[:items]
+    }
   end
 end
