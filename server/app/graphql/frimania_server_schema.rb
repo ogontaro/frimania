@@ -1,4 +1,4 @@
-FrimaniaServerSchema = GraphQL::Schema.define do
+class FrimaniaServerSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 end
