@@ -1,0 +1,40 @@
+version: '2'
+services:
+  rails:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    ports:
+      - "3000:3000"
+    command: "bundle exec rails s -p 3000 -b 0.0.0.0"
+    volumes:
+      - "./server:/root/app"
+    volumes_from:
+      - data
+    environment:
+      - DATABASE_HOST=mysql
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=
+      - SECRET_KEY_BASE=slfjlakwsjlfajsljlkf
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.7
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    ports:
+      - "3306:3306"
+    volumes_from:
+      - data
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  data:
+    image: "busybox"
+    volumes:
+      - "mysql:/var/lib/mysql"
+      - "bundle:/usr/local/bundle"
+
+volumes:
+  mysql:
+    driver: local
+  bundle:
+    driver: local
