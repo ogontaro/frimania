@@ -3,6 +3,7 @@ FROM ruby:2.5.3
 
 ENV LANG C.UTF-8
 ENV APP_PATH="/root/app"
+RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
