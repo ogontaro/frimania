@@ -2,6 +2,7 @@ FROM node:10.6.0 as node
 FROM ruby:2.5.3
 
 ENV LANG C.UTF-8
+ENV APP_PATH="/root/app"
 
 RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
@@ -27,9 +28,9 @@ COPY --from=node /usr/local/bin/node /usr/local/bin/
 RUN ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn \
     && ln -s /opt/yarn/bin/yarnpkg /usr/local/bin/yarnpkg
 
-RUN mkdir /root/app
+RUN mkdir $APP_PATH
 
-WORKDIR /root/app
+WORKDIR $APP_PATH
 
 ENTRYPOINT [ \
     "prehook", "ruby -v", "--", \
