@@ -2,8 +2,7 @@ version: '2'
 services:
   rails:
     build:
-      context: .
-      dockerfile: ./server/Dockerfile
+      context: ./server
     ports:
       - "3000:3000"
     command: "bundle exec rails s -p 3000 -b 0.0.0.0"
