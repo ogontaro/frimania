@@ -12,6 +12,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
     end
 
     add_index :items, :name
-    add_index :items, :url, unique: true
+    add_index :items, :url, unique: true, length: { url: 255 }
   end
 end

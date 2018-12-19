@@ -4,12 +4,12 @@
 # Table name: items
 #
 #  id          :bigint(8)        not null, primary key
-#  description :text
-#  image_url   :text
-#  name        :string
+#  description :text(65535)
+#  image_url   :text(65535)
+#  name        :string(255)
 #  price       :integer
 #  state       :integer          default(1)
-#  url         :text
+#  url         :text(65535)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

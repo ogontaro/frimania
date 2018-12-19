@@ -12,20 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2018_10_29_060413) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "items", force: :cascade do |t|
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "price"
     t.text "url"
     t.text "image_url"
-    t.integer "state", limit: 2, default: 1
+    t.integer "state", limit: 1, default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_items_on_name"
-    t.index ["url"], name: "index_items_on_url", unique: true
+    t.index ["url"], name: "index_items_on_url", unique: true, length: 255
   end
 
 end
