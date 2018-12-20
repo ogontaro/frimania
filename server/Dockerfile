@@ -34,6 +34,7 @@ RUN mkdir $APP_PATH
 WORKDIR $APP_PATH
 
 COPY Gemfile Gemfile.lock ./
+RUN bundle install --without production --jobs 4
 
 ENTRYPOINT [ \
     "prehook", "ruby -v", "--", \
