@@ -5,3 +5,13 @@ server is developed in [frimania-server](https://github.com/ogontaro/frimania-se
 
 ## Setup
 ./setup.sh
+
+## init App
+```
+docker-compose run rails bash -c "bundle exec rails db:create db:migrate db:seed"
+```
+
+## Run App
+```
+docker-compose up -d
+```
