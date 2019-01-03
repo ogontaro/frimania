@@ -10,11 +10,11 @@ default: &default
 
 development:
   <<: *default
-  database: frimania-server_development
+  database: frimania_development
 
 test:
   <<: *default
-  database: frimania-server_test
+  database: frimania_test
 
 production:
   <<: *default
