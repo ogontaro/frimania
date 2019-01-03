@@ -38,4 +38,5 @@ RUN bundle install --without production --jobs 4
 
 ENTRYPOINT [ \
     "prehook", "ruby -v", "--", \
+    "prehook", "rm -f tmp/pids/server.pid", \
     "prehook", "bundle install -j4 --without production", "--"]
