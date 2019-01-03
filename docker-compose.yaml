@@ -1,6 +1,6 @@
 version: '2'
 services:
-  rails:
+  server:
     build:
       context: ./server
     ports:
@@ -9,31 +9,31 @@ services:
     volumes:
       - "./server:/root/app"
     volumes_from:
-      - data
+      - datastore
     environment:
-      - DATABASE_HOST=mysql
+      - DATABASE_HOST=db
       - DATABASE_USER=root
       - DATABASE_PASSWORD=
       - SECRET_KEY_BASE=slfjlakwsjlfajsljlkf
     depends_on:
-      - mysql
-  mysql:
+      - db
+  db:
     image: mysql:5.7
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
     ports:
       - "3306:3306"
     volumes_from:
-      - data
+      - datastore
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-  data:
+  datastore:
     image: "busybox"
     volumes:
-      - "mysql:/var/lib/mysql"
-      - "bundle:/usr/local/bundle"
+      - "server:/usr/local/bundle"
+      - "db:/var/lib/mysql"
 
 volumes:
-  mysql:
+  db:
     driver: local
-  bundle:
+  server:
     driver: local
