@@ -11,13 +11,6 @@ AllCops:
     - 'node_modules/**/*'
     - 'config/**/*'
     - 'bin/**/*'
-    - 'spec/lib/handsaw/**/*'
-    - 'lib/handsaw/**/*'
-    - 'lib/html_builder.rb'
-    - 'app/processors/**/*'
-    - 'app/helpers/processor_helper.rb'
-    - 'app/helpers/meta_helper.rb'
-    - 'app/views/articles/_article.json.jbuilder'
 
   TargetRubyVersion: 2.5.1
   TargetRailsVersion: 5.2
