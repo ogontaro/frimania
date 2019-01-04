@@ -2,7 +2,7 @@
 frimania is cross search in frima site
 
 ## Project Repository
-frimania has many projects.
+frimania has many projects.  
 client is developed in [frimania-client](https://github.com/ogontaro/frimania-client)  
 server is developed in [frimania-server](https://github.com/ogontaro/frimania-server)
 
